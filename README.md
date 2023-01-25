@@ -1,11 +1,11 @@
-# Estelar Afilliate API
+# Stelar Afilliate API
 
 ## Create an user
 
 To make any requests, you should first of all create your own user. To create your user, you should call the following route.
 
 ```
-curl --location --request POST '{{ESTELAR_API}}/user' \
+curl --location --request POST '{{STELAR_API}}/user' \
 --header 'Content-Type: application/json' \
 --data-raw '{
     "firstName": "Robert",
@@ -22,7 +22,7 @@ This will allow you to auth and get a token to make other requests.
 After the user was created, you can authenticate on the system. Here is no need for the x-api-key.
 
 ```
-curl --location -g --request POST '{{ESTELAR_API}}/auth' \
+curl --location -g --request POST '{{STELAR_API}}/auth' \
 	--header 'Content-Type: application/json' \
 	--data-raw '{
 			"email": "robert.cunha@estrelabet.com",
@@ -50,7 +50,7 @@ This token is valid for 86400 seconds, wich means one day. After it, you shall a
 You can list rounds and make some filters. Use the bearer token that the auth route created. On the Authorization header, put the word Bearer and paste the token.
 
 ```
-curl --location --request GET '{{ESTELAR_API}}/round' \
+curl --location --request GET '{{STELAR_API}}/round' \
 --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJvYmVydC5jdW5oYUBlc3RyZWxhYmV0LmNvbSIsImRhdGUiOjE2NzI3NjEzMzg5ODEsImlhdCI6MTY3Mjc2MTMzOCwiZXhwIjoxNjcyODQ3NzM4fQ.7cBFFxZuS0cum7f8hzBSMgEZ81-pMRrHJzSoTaH3WFk'
 ```
 
@@ -86,6 +86,6 @@ The query parameters are optional params that you can use to filter the rounds t
 ### Examples with Query Parameters
 
 ```
-curl --location --request GET '{{ESTELAR_API}}/round?page=0&limit=10&query={"multiplier":3}&sort={"roundId":-1}' \
+curl --location --request GET '{{STELAR_API}}/round?page=0&limit=10&query={"multiplier":3}&sort={"roundId":-1}' \
 --header 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InJvYmVydC5jdW5oYUBlc3RyZWxhYmV0LmNvbSIsImRhdGUiOjE2NzI3NjEzMzg5ODEsImlhdCI6MTY3Mjc2MTMzOCwiZXhwIjoxNjcyODQ3NzM4fQ.7cBFFxZuS0cum7f8hzBSMgEZ81-pMRrHJzSoTaH3WFk'
 ```
