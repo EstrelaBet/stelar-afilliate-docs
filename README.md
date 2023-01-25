@@ -43,7 +43,7 @@ When you do the request, you should receive a response like this.
 }
 ```
 
-This token is valid for 86400 seconds, wich means one day. After it, you shall authenticante again to generate another bearer token. This token is used to list estelar rounds.
+This token is valid for 86400 seconds, wich means one day. After it, you shall authenticante again to generate another bearer token. This token is used to list stelar rounds.
 
 ## List rounds
 
